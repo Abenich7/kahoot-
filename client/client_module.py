@@ -4,7 +4,7 @@ import json
 from time import sleep
 import threading
 import sys
-
+TEST TEST TREST 
 HOST = '127.0.0.1'
 PORT = 5000
 FORMAT = 'utf-8'
