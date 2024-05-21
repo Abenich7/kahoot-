@@ -1,64 +1,52 @@
 # client_module.py
 import socket
 import json
-from time import sleep
 import threading
 import sys
-TEST TEST TREST 
+import logging
+
 HOST = '127.0.0.1'
 PORT = 5000
 FORMAT = 'utf-8'
 ADDR = (HOST, PORT)  # Creating a tuple of IP+PORT
 
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class Client:
     def __init__(self):
-        self.server = (HOST,PORT)
-       
+        self.server = ADDR
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.fail=0
+        self.fail = False
+        self.username = None
         self.connect_to_server()
         self.check_connection()
-
-        self.username=None
-        #self.password
-        
-        #the following request has to be called by the clients in the Waiting Room page 
-       # self.game_room_initialized = threading.Event()  # Event for synchronization
-
-       # self.game_room_page = None
-
-    def join_waiting_room(self):
-        self.server.handle_client_join(self)
 
     def connect_to_server(self):
         try:
             self.client_socket.connect(self.server)
+            logging.info(f"Connected to server at {self.server}")
         except Exception as e:
-                self.fail=1
-                self.client_socket.close()
-        
+            logging.error(f"Failed to connect to server: {e}")
+            self.fail = True
+            self.client_socket.close()
+
     def check_connection(self):
-        try: 
-            request= f"check_connection"
-            self.send_request(self,request)
+        try:
+            request = "check_connection"
+            self.send_request(request)
         except Exception as e:
-            print("server disconnected")
+            logging.error("Server disconnected")
             self.client_socket.close()
             sys.exit()
-            #raise to system to do a sys.exit()
 
     def send_request(self, request):
         try:
             self.client_socket.sendall(request.encode(FORMAT))
-            response = self.client_socket.recv(1024).decode()
-            print("Response from server:", response)
+            response = self.client_socket.recv(1024).decode(FORMAT)
+            logging.debug(f"Response from server: {response}")
             return response
         except Exception as e:
-            print(f"Error processing request: {request}")
-            print(f"Exception: {str(e)}")
-            self.fail=1
+            logging.error(f"Error processing request '{request}': {e}")
+            self.fail = True
             self.client_socket.close()
-            
             return None
-
