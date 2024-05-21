@@ -1,0 +1,42 @@
+Kahoot game app. 
+
+Key thing to understand: this app has to be developed by taking into account the network
+layers we spoke about - this is very useful to underatand how to deal with the development
+
+This only seems like it is only application level, but thats not true.
+
+Why this will be helpful:
+	-help understand the architecture of the app	
+	-error identification and handling by layer 
+
+Let us break down the layers of this application:
+
+Layer breakdown of the kahoot app (from highest layer to lowest):
+
+GUI
+	errors in this layer:
+		-Gui not presenting properly
+		-incorrect client input
+
+Data TRANSMISSION
+	-errors in this layer:
+		-wrong data transferred to client
+		-no data transferred to client
+		-no handle for particular client request
+		-server did not find data client has asked for 
+
+Data LINK
+	-errors in this later:
+		-data speed - important for syncing the player
+		-encryption 
+		-player leaving a game room
+		-admin leaving
+		
+Internet (network layer)
+	-errors in this level
+		-client cannot connect to server	
+		-server crashed
+		-client disconnected
+		
+Lower levels - DO NOT CARE
+

@@ -1,0 +1,21 @@
+{
+    "kahoot_game": {
+      "users": {
+        "num_users": 0,
+        "user_limit": 0,
+        "users_list": []
+      },
+      "rooms": {
+        "room_ids": [],
+        "full_rooms": {},
+        "rooms_underway": {},
+        "room_limit": 0,
+        "leaderboard": {}
+      },
+      "quizzes": {
+        "quiz_names": [],
+        "quizzes_list": []
+      }
+    }
+  }
+  

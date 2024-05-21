@@ -1,0 +1,19 @@
+{
+    "room_control":[
+        {
+            "active rooms":0,
+            "empty rooms":5,
+            "rooms":{
+                 "A":[
+                    {
+                        "players":0,
+                        "playerID":["1","2","3"]
+                        
+                    }
+
+                ]
+        }
+    }
+    ]
+
+}

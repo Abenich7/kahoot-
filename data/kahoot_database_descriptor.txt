@@ -1,0 +1,111 @@
+python object legend:
+d=dict
+l=list
+s=str
+i=int
+
+game_data(l)
+
+	--nested objects:
+
+		users(l),quizzes(l),rooms(l)	
+		numQuizzes(i),numRooms(i),numPlayers(i)
+			
+	--methods:
+
+		-update numQuizzes
+		-update numRooms
+		-update numPlayers
+
+
+users(l)
+
+	--nested objects:
+
+		
+		user(d)
+		numUsers(int)
+		userLimit(int)
+
+	--methods:
+
+		-add user
+		-update numUsers
+		-update userLimit
+		-compare numUsers,userLimit
+
+
+user(d)
+	
+	--key:value: 
+
+		ADDR (IP,PORT): value
+		username: value
+		password: value
+		level: value
+		gamesWon: value
+
+	-methods:
+		-update dictionary
+
+
+rooms(l)
+
+	--nested objects= 
+
+		roomIDS(l),fullRooms(d),roomsUnderway(d),room(l),roomLimit(i),Leadeboard(d)
+
+	--methods:
+
+		-update fullRooms (edit True/False)
+		-update roomIDS (add,delete)
+		-updates roomsUnderway (edit True/False)
+
+room(l)
+
+	-nested objects:
+		
+		-players(d),scores(d) (ex: player1:10,player2:50)
+
+scores(d)
+	
+	key:value
+	
+
+
+Leaderboard(d)
+
+	--key:value
+		username:points
+	
+	--methods: 
+
+		-update key 
+
+quizzes(l)
+
+	--nested objects:
+		
+		quizNames(l),quiz(l),
+
+	--methods:
+
+		--update quiz (add/remove)
+		--change quizName 
+
+
+quiz(l)
+
+	--nested objects:
+
+		-questions(l),answers(l),correct_answersd(d),numQuestions(i),level(i)
+
+
+
+
+		
+
+
+
+
+

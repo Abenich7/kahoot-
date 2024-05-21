@@ -1,0 +1,20 @@
+{
+    "users": {
+        "ariel": "123",
+        "ben": "456"
+    },
+    "rooms": {
+        "room_ids": [],
+        "full_rooms": {},
+        "rooms_underway": {},
+        "room_limit": 0,
+        "leaderboard": {}
+    },
+    "quizzes": {
+        "quiz_names": [],
+        "quizzes_list": []
+    },
+    "numQuizzes": 0,
+    "numRooms": 0,
+    "numPlayers": 0
+}

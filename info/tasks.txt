@@ -1,0 +1,44 @@
+Split the server project into tasks. 
+
+Modules:
+1. main server that listens for incoming connections. 
+	-must be implemented in the correct way
+	-learn how to implement a server that listens to incoming client connections. 
+	-make the server welcome new clients to the website-client should know its logged in 
+	-make the server welcome clients and keep listening for new clients
+	-define how the server controls the multiple clients
+		-creating threads to deal with separate functions through time sharing
+			-necessary threads:
+				-initially one client is asking to join the game 
+					-client sends request to server
+						-server database lookup to see if client already exists 
+							-server creates socket with that specific client, 
+							and creates a thread that handles their connection
+							-the handle includes all the api's the client can 
+							ask and potential replies for them 
+				-server keeps listening for new connection requests 
+				-server assigns new clients to same rooms by using logic
+				 to determine what data to retrive for that particular client		
+				based on the room they are in. 
+
+2. client side
+	-what runs directly on the client side
+		-client runs the kahoot application on his local computer. 
+		-create a gui that is downloaded to the clients computer. 
+		and make it able to communicate online 
+		-define the api's by which the client can communicate to the server	
+				-each request to the server is an api:
+					-send login request to server
+					-create new quiz
+					-join game room 
+					-quit game room
+					-ask for previous results stored by server 
+
+3. Data structures
+	-create simple data structures for each type of data you need
+		-for quizzes
+		-for active connections
+		-for game rooms
+		-leaderboards
+	-test retrieval of data from data strcuture (python read json file?)
+	-test updating of data 
